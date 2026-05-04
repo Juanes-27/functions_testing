@@ -2,7 +2,7 @@ install:
 	pip install --upgrade pip  && pip install -r requirements.txt && python -m textblob.download_corpora
 
 test:
-	python -m pytest -vv --cov=wikiphrases --cov=nlplohic test_corenlp.py
+	python -m pytest -vv  --cov=nlplogic test_corenlp.py
 
 lint:
 	pylint --disable=R,C nlplogic/*.py
