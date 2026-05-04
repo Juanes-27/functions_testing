@@ -2,10 +2,13 @@ install:
 	pip install --upgrade pip  && pip install -r requirements.txt && python -m textblob.download_corpora
 
 test:
-	python -m pytest -vv --cov=hello --cov=hellocli test_hello.py
+	python -m pytest -vv --cov=wikiphrases --cov=nlplohic test_corenlp.py
 
 lint:
-	pylint --disable=R,C hello.py hellocli.py
+	pylint --disable=R,C nlplogic/*.py
+
+format:
+	python -m black *.py nlplogic
 
 all:
 	install lint test
